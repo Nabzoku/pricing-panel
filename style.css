@@ -1,0 +1,265 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* CSS RESET END */
+
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  color: #1f4f77;
+  background-color: #63b4e6;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.panel {
+  background-color: #eaeaea;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  height: auto;
+  gap: 1rem;
+  border-radius: 0.25rem;
+  padding: 3rem 2rem 3rem 2rem;
+  width: 100%;
+  max-width: 960px;
+  text-transform: uppercase;
+}
+.pricing-plan {
+  position: relative;
+  padding: 1.5rem 2rem;
+}
+.pricing-img {
+  margin-bottom: 1rem;
+  max-width: 100%;
+}
+.pricing-header {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  color: #2c82c9;
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+  position: relative;
+}
+.pricing-header::before {
+  content: '';
+  border-bottom: 1px solid rgba(31, 79, 119, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: 37.5%;
+  width: 25%;
+}
+.pricing-features-item {
+  font-weight: 600;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  line-height: 1.5rem;
+}
+.pricing-features-item::before {
+  content: '';
+  border-bottom: 1px solid rgba(31, 79, 119, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: 37.5%;
+  width: 25%;
+}
+.pricing-price {
+  display: block;
+  padding: 0.5rem 0 2rem 0;
+  font-size: 2rem;
+  color: #2c82c9;
+  font-weight: 900;
+}
+.pricing-button {
+  padding: 0rem 0.5rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: #63b4e6;
+  font-weight: 600;
+  font-size: 1.75rem;
+  position: relative;
+  --b: 0.1em; /* the thickness of the line */
+  --c: #004ba7; /* the color */
+
+  color: #0000;
+  padding-block: var(--b);
+  background: linear-gradient(var(--c) 50%, #63b4e6 0) 0%
+      calc(100% - var(--_p, 0%)) / 100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p, 0%) / var(--_p, 0%) var(--b)
+      no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.25s var(--_s, 0s) linear,
+    background-size 0.3s calc(0.2s - var(--_s, 0s));
+  z-index: 1;
+}
+.pricing-button::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  border: #63b4e6 0.1em solid;
+  height: calc(100% - 0.2em);
+  width: calc(100% - 0.2em);
+}
+.pricing-button:hover::before {
+  display: none;
+}
+.pricing-button:hover {
+  --_p: 100%;
+  --_s: 0.3s;
+  border-bottom: none;
+}
+@media (min-width: 961px) {
+  .pricing-plan:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 12.5%;
+    height: 75%;
+    border-right: 1px solid rgba(31, 79, 119, 0.5);
+  }
+}
+@media (max-width: 960px) {
+  .pricing-plan {
+    padding-bottom: 3.5rem;
+  }
+  .panel {
+    flex-direction: column;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+  .pricing-plan:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    border-bottom: 1px solid rgba(31, 79, 119, 0.5);
+  }
+}
